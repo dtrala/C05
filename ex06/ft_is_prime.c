@@ -6,13 +6,13 @@
 /*   By: dlascaba <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/24 20:35:12 by dlascaba          #+#    #+#             */
-/*   Updated: 2021/07/24 20:39:12 by dlascaba         ###   ########.fr       */
+/*   Updated: 2021/07/24 20:52:12 by dlascaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_is_prime(int nb)
+int	ft_is_prime(int nb)
 {
-	int i;
+	int	i;
 
 	i = 2;
 	while (i <= nb / 2)

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sqrt.c                                          :+:      :+:    :+:   */
+/*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlascaba <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/24 19:57:40 by dlascaba          #+#    #+#             */
-/*   Updated: 2021/07/24 20:51:19 by dlascaba         ###   ########.fr       */
+/*   Created: 2021/07/25 15:40:10 by dlascaba          #+#    #+#             */
+/*   Updated: 2021/07/26 18:45:29 by dlascaba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 
-int	ft_sqrt(int nb)
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = 1;
-	if (nb > 0)
+	i = 2;
+	if (i <  2)
+		return (0);
+	while (i <= (nb / i))
 	{
-		while (i * i <= nb)
-		{
-			if (i * i == nb)
-				return (i);
-			else if (i >= 46341)
-				return (0);
-			i++;
-		}
+		if (nb % i == 0)
+			return (0);
+		i++;
 	}
-	return (0);
+	return (1);
+}
+
+int	ft_find_next_prime(int nb)
+{
+	while (!ft_is_prime(nb))
+		nb++;
+	return (nb);
+}
+
+int	main(void)
+{
+	printf("7 = %d (2)\n", ft_find_next_prime(7));
 }
